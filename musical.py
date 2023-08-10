@@ -10,7 +10,7 @@ load_dotenv()
 openai_api_key = st.secrets("OPENAI_API_KEY")
 
 # Set up the LLM, API Key will be rotated so input your own key
-llm = OpenAI(openai_api_key="OPENAI_API_KEY" , temperature=1.2, max_tokens=900)
+llm = OpenAI(openai_api_key=openai_api_key , temperature=1.2, max_tokens=900)
 
 def main():
     st.title("Text Musical Generator in Different Languages")
