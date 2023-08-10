@@ -16,20 +16,18 @@ def main():
     st.title("Text Musical Generator in Different Languages")
 
     # Dropdown menu with six languages
-    languages = ["English", "Spanish", "French", "German", "Chinese", "Japanese"]
+    languages = ["English", "Spanish", "French", "German"]
     selected_language = st.selectbox("Choose a response language:", languages)
 
     # Modify the prompt to instruct the model to explain the user's input in a musical style in the desired language
     language_instructions = {
         "English": "",
-        "Spanish": "en español",
-        "French": "en français",
-        "German": "auf Deutsch",
-        "Chinese": "用中文",
-        "Japanese": "日本語で"
+        "Spanish": "español",
+        "French": "français",
+        "German": "Deutsch"
     }
     instruction = language_instructions[selected_language]
-    prompt_template = f"Output the statement '{{input}}' like it is a {instruction} musical."
+    prompt_template = f"Output the statement '{{input}}' in a {instruction} musical format."
 
     prompt = PromptTemplate(input_variables=["input"], template=prompt_template)
     chain = LLMChain(llm=llm, prompt=prompt)
