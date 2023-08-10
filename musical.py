@@ -7,7 +7,7 @@ from langchain.chains import LLMChain
 
 # Load environment variables and set up the OpenAI API key
 load_dotenv()
-openai_api_key = st.secrets("OPENAI_API_KEY")
+openai_api_key = st.secrets["OPENAI_API_KEY"]
 
 # Set up the LLM, API Key will be rotated so input your own key
 llm = OpenAI(openai_api_key=openai_api_key , temperature=1.2, max_tokens=900)
