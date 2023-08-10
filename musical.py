@@ -29,7 +29,7 @@ def main():
         "Japanese": "日本語で"
     }
     instruction = language_instructions[selected_language]
-    prompt_template = f"Explain {{input}} like you are in a musical {instruction}."
+    prompt_template = f"Output the statement '{{input}}' like it is a {instruction} musical."
 
     prompt = PromptTemplate(input_variables=["input"], template=prompt_template)
     chain = LLMChain(llm=llm, prompt=prompt)
