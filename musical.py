@@ -7,10 +7,10 @@ from langchain.chains import LLMChain
 
 # Load environment variables and set up the OpenAI API key
 load_dotenv()
-openai_api_key = os.getenv("OPENAI_API_KEY")
+#openai_api_key = os.getenv("OPENAI_API_KEY")
 
-# Set up the LLM
-llm = OpenAI(openai_api_key=openai_api_key, temperature=1.2, max_tokens=900)
+# Set up the LLM, API Key will be rotated so input your own key
+llm = OpenAI(openai_api_key="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" , temperature=1.2, max_tokens=900)
 
 def main():
     st.title("Text Musical Generator in Different Languages")
