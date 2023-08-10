@@ -27,7 +27,7 @@ def main():
         "German": "Deutsch"
     }
     instruction = language_instructions[selected_language]
-    prompt_template = f"Output the statement '{{input}}' in a {instruction} musical format."
+    prompt_template = f"Use the statement '{{input}}' to create a {instruction} musical."
 
     prompt = PromptTemplate(input_variables=["input"], template=prompt_template)
     chain = LLMChain(llm=llm, prompt=prompt)
